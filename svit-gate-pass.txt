@@ -1,0 +1,36 @@
+*** project :-- svit gate pass ***
+
+#frontend
+	+-authentication and authorization 
+		+--sign in (login) 
+		   +-user --(default)
+			+--email --(unique)
+				or
+			+--username --(unique)
+			+--password --(unique)
+				
+		   +-admin 
+			+--hod (uuid) and (pass)
+			+--hostel-rector (uuid) and (pass)
+			+--security (uuid) and (pass)
+				+--op-01-HOD 02-rector 03-security 
+					-if (uuid)=> admin
+			
+		+--sign up (only hostel students)
+			+--full name
+			+--username
+			+--email
+			+--mobile no. / parent no.
+			+--op-branch
+				--cs
+				--it
+				--chem
+				--ece
+				--fe
+			+--live photo
+			+--document
+				--fee reciapt
+				(tem- store-in-cache)
+		+--user (student) (isVerified)-->fk-->rector
+		
+	+-
