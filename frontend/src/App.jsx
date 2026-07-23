@@ -1,13 +1,19 @@
+import { Routes, Route } from "react-router-dom";
+import Signup from "./components/Login/Signup";
+import Signin from "./components/Login/Signin";
 
 
 function App() {
-  
-
   return (
     <>
-     <h1 className="mx-auto">hello bhai</h1>
+     
+        <Routes>
+          <Route path="/" element={<Signin />} />
+          <Route path="/Signup" element={<Signup />} />
+        </Routes>
+      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
