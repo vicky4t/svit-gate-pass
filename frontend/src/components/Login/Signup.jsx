@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../../assets/logo.png";
-import { Link,useNavigate } from "react-router-dom";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaRegEye, FaRegEyeSlash} from "react-icons/fa";
 import CamCapture from "./CamCapture";
 
 function Signup() {
   const [showPassword, setShowPassword] = useState(false);
 
-  const navigate = useNavigate();
 
   const {
     register,
@@ -25,25 +23,17 @@ function Signup() {
 
     console.log(data);
 
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+    await new Promise((resolve) => setTimeout(resolve, 10000));
 
     console.log("Account Created Successfully");
 
     reset();
 
-     navigate("/");
   };
 
   return (
     <>
-      {/* Navbar */}
-      <div className="bg-primary w-full h-16 md:h-20 flex items-center justify-between px-4 md:px-8 shadow fixed top-0 left-0 z-50">
-        <img src={logo} alt="Logo" className="w-32 md:w-40" />
-
-        <div className="text-2xl cursor-pointer">👤</div>
-      </div>
-
-      <div className="text-center mt-16 md:mt-20 bg-secondary ">
+      <div className="text-center mt-18 bg-secondary ">
         <h1 className="text-5xl md:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
           Hostel GatePass
           <br />
@@ -64,6 +54,7 @@ function Signup() {
       {/* form start  */}
       <div className=" bg-secondary flex items-center justify-center px-4 py-8 lg:px-8">
         <div className="bg-white max-w-md w-full rounded-xl shadow-lg p-6 lg:max-w-5xl">
+          
           <form onSubmit={handleSubmit(onSubmit)}>
             {/* Heading */}
             <h2 className="text-3xl font-bold text-center text-blue-600">
@@ -300,17 +291,6 @@ function Signup() {
           </form>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 py-8 text-center">
-        <h3 className="text-blue-700 font-bold">SVIT GatePass</h3>
-
-        <p className="text-gray-500 text-sm mt-2">
-          © 2026 SVIT GatePass.
-          <br />
-          All Rights Reserved.
-        </p>
-      </footer>
     </>
   );
 }

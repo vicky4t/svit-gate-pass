@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
 function Signin() {
@@ -22,7 +21,7 @@ function Signin() {
       password: data.password,
     });
 
-    // API call simulate
+    // API call simulate waiting, block  
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     console.log("Data Sent Successfully");
@@ -32,12 +31,6 @@ function Signin() {
 
   return (
     <>
-      {/* Navbar */}
-      <div className="bg-primary w-full h-16 md:h-20 flex items-center justify-between px-4 md:px-8 shadow fixed top-0 left-0 z-50">
-        <img src={logo} alt="Logo" className="w-32 md:w-40" />
-
-        <div className="text-2xl cursor-pointer">👤</div>
-      </div>
 
       {/* Main */}
       <div className="bg-secondary min-h-screen flex justify-center py-10 px-4 mt-16">
@@ -139,6 +132,33 @@ function Signin() {
               )}
             </div>
 
+            {(role === "faculty") && (
+              <div className="mb-6">
+              <label className="font-semibold text-sm">Role</label>
+
+              <div className="border rounded-lg mt-2 px-3 py-3">
+                 <select
+                  className="w-full outline-none bg-transparent"
+                  {...register("branch", {
+                    required: "Please select your Role",
+                  })}
+                >
+                  <option value="">Select Role</option>
+
+                  <option value="HOD">HOD</option>
+                  <option value="Rector">Rector</option>
+                  <option value="Security">Security</option>
+                </select>
+              </div>
+
+              {errors.role && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.role.message}
+                </p>
+              )}
+            </div>
+            )}
+
             {/* Login Button */}
             <button
               type="submit"
@@ -178,27 +198,6 @@ function Signin() {
           </form>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 py-8 text-center">
-        <h3 className="text-blue-700 font-bold">SVIT GatePass</h3>
-
-        <p className="text-gray-500 text-sm mt-2">
-          © 2026 SVIT GatePass.
-          <br />
-          All Rights Reserved.
-        </p>
-
-        {/* <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm text-gray-600">
-          <span className="cursor-pointer">Privacy Policy</span>
-          <span className="cursor-pointer">Terms of Service</span>
-          <span className="cursor-pointer">Hostel Rules</span>
-        </div>
-
-        <p className="mt-4 text-sm text-gray-600">
-          Contact Warden
-        </p> */}
-      </footer>
     </>
   );
 }
