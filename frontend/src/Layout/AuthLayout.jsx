@@ -7,11 +7,13 @@ import { Outlet } from "react-router-dom";
 
 function AuthLayout() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col justify-between bg-secondary">
       <AuthHeader/>
-      <Outlet/>
+      <div className="grow flex flex-col">
+        <Outlet/>
+      </div>
       <AuthFooter/>
-    </>
+    </div>
   )
 }
 

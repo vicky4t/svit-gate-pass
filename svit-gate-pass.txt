@@ -19,7 +19,7 @@
 		+--sign up (only hostel students)
 			+--full name
 			+--username
-			+--email
+			+--email-isVerified (send with otp)
 			+--mobile no. / parent no.
 			+--op-branch
 				--cs
@@ -33,4 +33,20 @@
 				(tem- store-in-cache)
 		+--user (student) (isVerified)-->fk-->rector
 		
-	+-
+	+-student-profile and staff-profile
+		+--student profile 
+			+--live-photo
+			+--full-name
+			+--email
+			+--isMale or isFemale
+			+--own-phone-no. , parent-phone no.
+			+--branch and room no. 	
+
+		+--faculty-profile
+			+--dept-name
+			+--current-HOD-name-(editable)
+
+			+--rector-boys-hostel and rector-girls-hostel
+				+--rector-full-name
+				+--rector-phone-no.
+				+--		 
