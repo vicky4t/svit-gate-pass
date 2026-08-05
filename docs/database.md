@@ -1,4 +1,6 @@
 # Database
+- postgres with ORM- prisma
+
 
 ## Overview
 
@@ -6,8 +8,8 @@ The SVIT Gate Pass system uses a relational database to persist all application 
 
 ## Database Technology
 
-- **Primary**: PostgreSQL / MySQL / MongoDB (specify based on your setup)
-- **ORM**: Sequelize / Mongoose / TypeORM (specify based on your setup)
+- **Primary**: PostgreSQL / 
+- **ORM**: prisma/ TypeORM 
 
 ## Entity-Relationship Diagram
 
